@@ -45,8 +45,8 @@ class OrderController extends Controller
             'delivery_time' => $request->delivery_time,
         ]);
         
-        $order = Order::create($request->all());
-        Notification::send(User::where('is_admin', true)->get(), new NewOrderNotification($order));
+        // $order = Order::create($request->all());
+        // Notification::send(User::where('is_admin', true)->get(), new NewOrderNotification($order));
 
         return response()->json($order);
     }
